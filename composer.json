@@ -1,0 +1,37 @@
+{
+    "name": "fdevs/js-routing",
+    "type": "library",
+    "keywords": ["routing"],
+    "require": {
+        "php": "^7.1",
+        "symfony/console": "^3.4 | ^4.0",
+        "symfony/routing": "^3.4 | ^4.0",
+        "symfony/serializer": "^3.4 | ^4.0"
+    },
+    "require-dev":{},
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Andrey Samusev",
+            "email": "andrey_simfi@list.ru",
+            "homepage": "http://andrey.4devs.io"
+        },
+        {
+            "name": "4devs Community",
+            "homepage": "https://github.com/4devs/js-routing/contributors"
+        }
+    ],
+    "suggest": {},
+    "config":{
+        "bin-dir": "bin",
+        "sort-packages": true
+    },
+    "autoload": {
+        "psr-4": {
+            "FDevs\\JsRouting\\": ""
+        },
+        "exclude-from-classmap": [
+            "/Tests/"
+        ]
+    }
+}

@@ -1,0 +1,34 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <defaults public="false" />
+
+        <service id="FDevs\JsRouting\RoutesExtractorInterface" alias="FDevs\JsRouting\RoutesExtractor"/>
+
+        <service class="FDevs\JsRouting\RoutesExtractor">
+            <argument type="service" id="Symfony\Component\Routing\RouterInterface"/>
+            <argument type="service" id="FDevs\JsRouting\Extractor\ExposedInterface"/>
+        </service>
+
+        <!--exposed-->
+        <service id="FDevs\JsRouting\Extractor\ExposedInterface" alias="FDevs\JsRouting\Extractor\ChainExposed"/>
+        <service class="FDevs\JsRouting\Extractor\ChainExposed">
+            <argument type="tagged" tag="f_devs.js_routing.exposed"/>
+        </service>
+
+        <service class="FDevs\JsRouting\Extractor\OptionExposed">
+            <tag name="f_devs.js_routing.exposed"/>
+        </service>
+
+        <!--encoder-->
+        <service class="FDevs\JsRouting\Encoder\JsCallbackEncoder">
+            <tag name="serializer.encoder"/>
+        </service>
+
+
+    </services>
+</container>
