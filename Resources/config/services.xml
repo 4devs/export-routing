@@ -29,6 +29,14 @@
             <tag name="serializer.encoder"/>
         </service>
 
+        <!--normalizer-->
+        <service class="FDevs\JsRouting\Normalizer\RouteNormalizer">
+            <tag name="serializer.normalizer" priority="0" />
+        </service>
+
+        <service class="FDevs\JsRouting\Normalizer\RoutesExtractorNormalizer">
+            <tag name="serializer.normalizer" priority="0" />
+        </service>
 
     </services>
 </container>

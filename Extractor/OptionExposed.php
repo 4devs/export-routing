@@ -2,7 +2,6 @@
 
 namespace FDevs\JsRouting\Extractor;
 
-
 use Symfony\Component\Routing\Route;
 
 class OptionExposed implements ExposedInterface

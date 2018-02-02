@@ -2,7 +2,6 @@
 
 namespace FDevs\JsRouting;
 
-
 use FDevs\JsRouting\Extractor\ExposedInterface;
 use Symfony\Component\Routing\RequestContext;
 use Symfony\Component\Routing\RouteCollection;
@@ -34,11 +33,11 @@ class RoutesExtractor implements RoutesExtractorInterface
     /**
      * {@inheritdoc}
      */
-    public function getRoutes(): \Traversable
+    public function getRoutes(): RouteCollection
     {
         $routes = new RouteCollection();
         $collection = $this->router->getRouteCollection();
-        foreach ($collection as $name => $item) {
+        foreach ($collection->all() as $name => $item) {
             if ($this->exposed->isRouteExposed($item, $name)) {
                 $routes->add($name, $item);
             }

@@ -3,13 +3,14 @@
 namespace FDevs\JsRouting;
 
 use Symfony\Component\Routing\RequestContext;
+use Symfony\Component\Routing\RouteCollection;
 
 interface RoutesExtractorInterface
 {
     /**
-     * @return \Traversable
+     * @return RouteCollection
      */
-    public function getRoutes(): \Traversable;
+    public function getRoutes(): RouteCollection;
 
     /**
      * @return RequestContext
