@@ -8,10 +8,10 @@
         <defaults public="false" />
 
 
-        <service class="FDevs\JsRouting\Command\DumpCommand">
+        <service class="FDevs\ExportRouting\Command\DumpCommand">
             <argument type="service" id="Symfony\Component\Serializer\SerializerInterface"/>
-            <argument type="service" id="FDevs\JsRouting\RoutesExtractorInterface"/>
-            <tag name="console.command" command="fdevs:js-routing:dump" />
+            <argument type="service" id="FDevs\ExportRouting\RoutesExtractorInterface"/>
+            <tag name="console.command" command="fdevs:dump-routing:dump" />
         </service>
 
     </services>

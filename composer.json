@@ -1,14 +1,15 @@
 {
-    "name": "fdevs/js-routing",
+    "name": "fdevs/export-routing",
     "type": "library",
     "keywords": ["routing"],
     "require": {
         "php": "^7.1",
-        "symfony/console": "^3.4 | ^4.0",
         "symfony/routing": "^3.4 | ^4.0",
         "symfony/serializer": "^3.4 | ^4.0"
     },
     "require-dev":{
+        "symfony/console": "^3.4 | ^4.0",
+        "symfony/framework-bundle": "^3.4 | ^4.0",
         "friendsofphp/php-cs-fixer": "^2.10"
     },
     "license": "MIT",
@@ -20,7 +21,7 @@
         },
         {
             "name": "4devs Community",
-            "homepage": "https://github.com/4devs/js-routing/contributors"
+            "homepage": "https://github.com/4devs/export-routing/contributors"
         }
     ],
     "suggest": {},
@@ -30,7 +31,7 @@
     },
     "autoload": {
         "psr-4": {
-            "FDevs\\JsRouting\\": ""
+            "FDevs\\ExportRouting\\": ""
         },
         "exclude-from-classmap": [
             "/Tests/"

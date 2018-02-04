@@ -1,13 +1,13 @@
 <?php
 
 /*
- * This file is part of the 4devs Serialiser package.
+ * This file is part of the 4devs Export Routing package.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
 
-namespace FDevs\JsRouting;
+namespace FDevs\ExportRouting;
 
 use Symfony\Component\Routing\RequestContext;
 use Symfony\Component\Routing\RouteCollection;
