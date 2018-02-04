@@ -24,15 +24,11 @@ class RoutesExtractorNormalizer implements ContextAwareNormalizerInterface, Norm
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $routes = [];
         /** @var RoutesExtractorInterface $object */
-        foreach ($object->getRoutes() as $item) {
-            $routes[] = $this->normalizer->normalize($item, $format, $context);
-        }
         $requestContext = $object->getContext();
         return [
             'base_url' => $requestContext->getBaseUrl(),
-            'routes' => $routes,
+            'routes' => $this->normalizer->normalize($object->getRoutes(), $format, $context),
             'host' => $requestContext->getHost(),
             'scheme' => $requestContext->getScheme(),
         ];
