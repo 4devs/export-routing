@@ -12,9 +12,10 @@ namespace FDevs\ExportRouting\Normalizer;
 use FDevs\ExportRouting\RoutesExtractorInterface;
 use Symfony\Component\Serializer\Encoder\NormalizationAwareInterface;
 use Symfony\Component\Serializer\Normalizer\ContextAwareNormalizerInterface;
+use Symfony\Component\Serializer\Normalizer\NormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareTrait;
 
-class RoutesExtractorNormalizer implements ContextAwareNormalizerInterface, NormalizationAwareInterface
+class RoutesExtractorNormalizer implements ContextAwareNormalizerInterface, NormalizerAwareInterface
 {
     use NormalizerAwareTrait;
 

@@ -9,36 +9,36 @@
 
         <service id="FDevs\ExportRouting\RoutesExtractorInterface" alias="FDevs\ExportRouting\RoutesExtractor"/>
 
-        <service class="FDevs\ExportRouting\RoutesExtractor">
+        <service id="FDevs\ExportRouting\RoutesExtractor">
             <argument type="service" id="Symfony\Component\Routing\RouterInterface"/>
             <argument type="service" id="FDevs\ExportRouting\Extractor\ExposedInterface"/>
         </service>
 
         <!--exposed-->
         <service id="FDevs\ExportRouting\Extractor\ExposedInterface" alias="FDevs\ExportRouting\Extractor\ChainExposed"/>
-        <service class="FDevs\ExportRouting\Extractor\ChainExposed">
+        <service id="FDevs\ExportRouting\Extractor\ChainExposed">
             <argument type="tagged" tag="f_devs.js_routing.exposed"/>
         </service>
 
-        <service class="FDevs\ExportRouting\Extractor\OptionExposed">
+        <service id="FDevs\ExportRouting\Extractor\OptionExposed">
             <tag name="f_devs.js_routing.exposed"/>
         </service>
 
         <!--encoder-->
-        <service class="FDevs\ExportRouting\Encoder\JsCallbackEncoder">
+        <service id="FDevs\ExportRouting\Encoder\JsCallbackEncoder">
             <tag name="serializer.encoder"/>
         </service>
 
         <!--normalizer-->
-        <service class="FDevs\ExportRouting\Normalizer\RouteCollectionNormalizer">
+        <service id="FDevs\ExportRouting\Normalizer\RouteCollectionNormalizer">
             <tag name="serializer.normalizer" priority="0" />
         </service>
 
-        <service class="FDevs\ExportRouting\Normalizer\RouteNormalizer">
+        <service id="FDevs\ExportRouting\Normalizer\RouteNormalizer">
             <tag name="serializer.normalizer" priority="0" />
         </service>
 
-        <service class="FDevs\ExportRouting\Normalizer\RoutesExtractorNormalizer">
+        <service id="FDevs\ExportRouting\Normalizer\RoutesExtractorNormalizer">
             <tag name="serializer.normalizer" priority="0" />
         </service>
 
