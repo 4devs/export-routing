@@ -8,9 +8,9 @@
         "symfony/serializer": "^3.4 | ^4.0"
     },
     "require-dev":{
+        "friendsofphp/php-cs-fixer": "^2.10",
         "symfony/console": "^3.4 | ^4.0",
-        "symfony/framework-bundle": "^3.4 | ^4.0",
-        "friendsofphp/php-cs-fixer": "^2.10"
+        "symfony/framework-bundle": "^3.4 | ^4.0"
     },
     "license": "MIT",
     "authors": [
