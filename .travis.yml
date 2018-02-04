@@ -4,9 +4,20 @@ php:
   - 7.1
   - 7.2
 
+matrix:
+  fast_finish: true
+  include:
+    - php: 7.1
+      env: DEPENDENCIES="symfony/lts:^3"
+    - php: 7.1
+      env: DEPENDENCIES="symfony/lts:^4"
+    - php: 7.2
+      env: DEPENDENCIES="symfony/lts:^4"
+
 before_script:
-  - composer self-update
-  - composer --prefer-source install
+  - if [ "$DEPENDENCIES" != "" ]; then composer require --no-update $DEPENDENCIES; fi;
+
+install: composer update --prefer-dist --no-interaction
 
 script:
   - bin/php-cs-fixer fix . --dry-run
