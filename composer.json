@@ -8,7 +8,9 @@
         "symfony/routing": "^3.4 | ^4.0",
         "symfony/serializer": "^3.4 | ^4.0"
     },
-    "require-dev":{},
+    "require-dev":{
+        "friendsofphp/php-cs-fixer": "^2.10"
+    },
     "license": "MIT",
     "authors": [
         {

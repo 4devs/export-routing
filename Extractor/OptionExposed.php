@@ -1,5 +1,12 @@
 <?php
 
+/*
+ * This file is part of the 4devs Serialiser package.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace FDevs\JsRouting\Extractor;
 
 use Symfony\Component\Routing\Route;
@@ -13,6 +20,7 @@ class OptionExposed implements ExposedInterface
 
     /**
      * OptionExposed constructor.
+     *
      * @param string $option
      */
     public function __construct(string $option = 'expose')

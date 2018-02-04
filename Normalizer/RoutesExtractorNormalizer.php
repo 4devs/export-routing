@@ -1,5 +1,12 @@
 <?php
 
+/*
+ * This file is part of the 4devs Serialiser package.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace FDevs\JsRouting\Normalizer;
 
 use FDevs\JsRouting\RoutesExtractorInterface;
@@ -14,7 +21,7 @@ class RoutesExtractorNormalizer implements ContextAwareNormalizerInterface, Norm
     /**
      * {@inheritdoc}
      */
-    public function supportsNormalization($data, $format = null, array $context = array())
+    public function supportsNormalization($data, $format = null, array $context = [])
     {
         return $data instanceof RoutesExtractorInterface;
     }
@@ -22,10 +29,11 @@ class RoutesExtractorNormalizer implements ContextAwareNormalizerInterface, Norm
     /**
      * {@inheritdoc}
      */
-    public function normalize($object, $format = null, array $context = array())
+    public function normalize($object, $format = null, array $context = [])
     {
         /** @var RoutesExtractorInterface $object */
         $requestContext = $object->getContext();
+
         return [
             'base_url' => $requestContext->getBaseUrl(),
             'routes' => $this->normalizer->normalize($object->getRoutes(), $format, $context),

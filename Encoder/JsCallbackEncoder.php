@@ -1,5 +1,12 @@
 <?php
 
+/*
+ * This file is part of the 4devs Serialiser package.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace FDevs\JsRouting\Encoder;
 
 use Symfony\Component\Serializer\Encoder\ContextAwareEncoderInterface;
@@ -17,6 +24,7 @@ class JsCallbackEncoder implements ContextAwareEncoderInterface
 
     /**
      * JsCallbackEncoder constructor.
+     *
      * @param JsonEncode $encodingImpl
      */
     public function __construct(JsonEncode $encodingImpl = null)
@@ -27,7 +35,7 @@ class JsCallbackEncoder implements ContextAwareEncoderInterface
     /**
      * {@inheritdoc}
      */
-    public function supportsEncoding($format, array $context = array())
+    public function supportsEncoding($format, array $context = [])
     {
         return self::FORMAT === $format && isset($context[self::CONTEXT_KEY]);
     }
@@ -35,8 +43,8 @@ class JsCallbackEncoder implements ContextAwareEncoderInterface
     /**
      * {@inheritdoc}
      */
-    public function encode($data, $format, array $context = array())
+    public function encode($data, $format, array $context = [])
     {
-        return sprintf("%s(%s);", $context[self::CONTEXT_KEY], $this->encodingImpl->encode($data, self::FORMAT, $context));
+        return sprintf('%s(%s);', $context[self::CONTEXT_KEY], $this->encodingImpl->encode($data, self::FORMAT, $context));
     }
 }
