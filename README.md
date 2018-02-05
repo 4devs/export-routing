@@ -67,7 +67,7 @@ Create your application with [Console Component](https://symfony.com/doc/master/
  // ...
 $serializer = new Serializer(\**\);//init serializer
 $extractor = new RoutesExtractor(\**\);//init extractor
-//$application->add(new DumpCommand($serializer,$extractor,'fdevs:dump-routing:dump'));
+$application->add(new DumpCommand($serializer,$extractor,'fdevs:dump-routing:dump'));
 ```
 
 ###Run Command
