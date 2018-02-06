@@ -19,3 +19,4 @@ install: composer update --prefer-dist --no-interaction
 
 script:
   - bin/php-cs-fixer fix . --dry-run
+  - bin/phpunit
