@@ -12,7 +12,7 @@ matrix:
     - php: 7.2
       env: DEPENDENCIES="symfony/lts:^4"
 
-before_script:
+before_install:
   - if [ "$DEPENDENCIES" != "" ]; then composer require --no-update $DEPENDENCIES; fi;
 
 install: composer update --prefer-dist --no-interaction
