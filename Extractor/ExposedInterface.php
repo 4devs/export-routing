@@ -14,7 +14,7 @@ use Symfony\Component\Routing\Route;
 interface ExposedInterface
 {
     /**
-     * @param Route $route
+     * @param Route  $route
      * @param string $name
      *
      * @return null|bool
