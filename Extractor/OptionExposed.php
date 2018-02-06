@@ -31,8 +31,13 @@ class OptionExposed implements ExposedInterface
     /**
      * {@inheritdoc}
      */
-    public function isRouteExposed(Route $route, string $name): bool
+    public function isRouteExposed(Route $route, string $name): ?bool
     {
-        return true === $route->getOption($this->option) || 'true' === $route->getOption($this->option);
+        $option = $route->getOption($this->option);
+        if (null !== $option) {
+            $option = \filter_var($option, \FILTER_VALIDATE_BOOLEAN);
+        }
+
+        return $option;
     }
 }

@@ -31,16 +31,17 @@ class ChainExposed implements ExposedInterface
     /**
      * {@inheritdoc}
      */
-    public function isRouteExposed(Route $route, string $name): bool
+    public function isRouteExposed(Route $route, string $name): ?bool
     {
-        $support = false;
+        $support = null;
         foreach ($this->exposed as $item) {
-            if ($item->isRouteExposed($route, $name)) {
-                $support = true;
+            $result = $item->isRouteExposed($route, $name) && $support;
+            if (false === $result) {
+                $support = false;
                 break;
             }
         }
 
-        return $support;
+        return $support ?? false;
     }
 }

@@ -14,10 +14,10 @@ use Symfony\Component\Routing\Route;
 interface ExposedInterface
 {
     /**
-     * @param Route  $route
+     * @param Route $route
      * @param string $name
      *
-     * @return bool
+     * @return null|bool
      */
-    public function isRouteExposed(Route $route, string $name): bool;
+    public function isRouteExposed(Route $route, string $name): ?bool;
 }

@@ -4,12 +4,12 @@
     "keywords": ["routing"],
     "require": {
         "php": "^7.1",
-        "phpunit/phpunit": "^7.0",
         "symfony/routing": "^3.4 | ^4.0",
         "symfony/serializer": "^3.4 | ^4.0"
     },
     "require-dev":{
         "friendsofphp/php-cs-fixer": "^2.10",
+        "phpunit/phpunit": "^7.0",
         "symfony/console": "^3.4 | ^4.0",
         "symfony/framework-bundle": "^3.4 | ^4.0"
     },
@@ -25,7 +25,10 @@
             "homepage": "https://github.com/4devs/export-routing/contributors"
         }
     ],
-    "suggest": {},
+    "suggest": {
+        "symfony/console" : "use with symfony console",
+        "symfony/framework-bundle" : "use with symfony framework"
+    },
     "config":{
         "bin-dir": "bin",
         "sort-packages": true

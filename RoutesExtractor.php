@@ -46,7 +46,7 @@ class RoutesExtractor implements RoutesExtractorInterface
         $routes = new RouteCollection();
         $collection = $this->router->getRouteCollection();
         foreach ($collection->all() as $name => $item) {
-            if ($this->exposed->isRouteExposed($item, $name)) {
+            if (true === $this->exposed->isRouteExposed($item, $name)) {
                 $routes->add($name, $item);
             }
         }
