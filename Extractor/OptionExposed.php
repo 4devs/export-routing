@@ -33,6 +33,6 @@ class OptionExposed implements ExposedInterface
      */
     public function isRouteExposed(Route $route, string $name): bool
     {
-        return true === $route->getOption($this->option);
+        return true === $route->getOption($this->option) || 'true' === $route->getOption($this->option);
     }
 }
