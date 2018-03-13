@@ -72,5 +72,5 @@ $application->add(new DumpCommand($serializer,$extractor,'fdevs:dump-routing:dum
 
 ###Run Command
 ```bash
-bin/console fdevs:dump-routing:dump
+bin/console fdevs:export-routing:dump
 ```
