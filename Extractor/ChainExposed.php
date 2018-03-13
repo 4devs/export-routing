@@ -19,13 +19,20 @@ class ChainExposed implements ExposedInterface
     private $exposed;
 
     /**
+     * @var bool
+     */
+    private $abstain;
+
+    /**
      * ChainExposed constructor.
      *
      * @param ExposedInterface[]|iterable $exposed
+     * @param bool                        $abstain
      */
-    public function __construct(iterable $exposed = [])
+    public function __construct(iterable $exposed = [], bool $abstain = false)
     {
         $this->exposed = $exposed;
+        $this->abstain = $abstain;
     }
 
     /**
@@ -33,15 +40,14 @@ class ChainExposed implements ExposedInterface
      */
     public function isRouteExposed(Route $route, string $name): ?bool
     {
-        $support = null;
+        $support = false;
         foreach ($this->exposed as $item) {
-            $result = $item->isRouteExposed($route, $name) && $support;
-            if (false === $result) {
-                $support = false;
+            $support = $item->isRouteExposed($route, $name);
+            if (false === $support) {
                 break;
             }
         }
 
-        return $support ?? false;
+        return $support ?? $this->abstain;
     }
 }
