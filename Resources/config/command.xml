@@ -11,7 +11,7 @@
         <service id="FDevs\ExportRouting\Command\DumpCommand">
             <argument type="service" id="Symfony\Component\Serializer\SerializerInterface"/>
             <argument type="service" id="FDevs\ExportRouting\RoutesExtractorInterface"/>
-            <tag name="console.command" command="fdevs:dump-routing:dump" />
+            <tag name="console.command" command="fdevs:export-routing:dump" />
         </service>
 
     </services>
